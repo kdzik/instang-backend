@@ -1,8 +1,9 @@
-package com.krystiandzik.instangserver.service;
+package com.krystiandzik.instangserver.service.impl;
 
 import com.krystiandzik.instangserver.dao.PhotoDao;
 import com.krystiandzik.instangserver.models.Photo;
 import com.krystiandzik.instangserver.models.User;
+import com.krystiandzik.instangserver.service.PhotoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

@@ -23,4 +23,9 @@ public class UserResources {
     public User findByUserName(@PathVariable String username){
         return userService.findByUserName(username);
     }
+
+    @PutMapping("/user/update")
+    public User updateUser(@RequestBody User user){
+        return userService.save(user);
+    }
 }
