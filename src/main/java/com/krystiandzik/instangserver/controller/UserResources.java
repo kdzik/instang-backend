@@ -14,7 +14,7 @@ public class UserResources {
     @Autowired
     private UserService userService;
 
-    @PostMapping("/user/users")
+    @GetMapping("/user/users")
     public List<User> findAllUsers() {
         return userService.findAllUsers();
     }
@@ -23,6 +23,12 @@ public class UserResources {
     public User findByUserName(@PathVariable String username){
         return userService.findByUserName(username);
     }
+
+    @PostMapping("/user/id/{id}")
+    public User findByUserId(@PathVariable Long id){
+        return userService.findByUserId(id);
+    }
+
 
     @PutMapping("/user/update")
     public User updateUser(@RequestBody User user){

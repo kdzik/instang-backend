@@ -66,6 +66,11 @@ public class PhotoResource {
         return photoService.findByUser(user);
     }
 
+    @PostMapping("/photo/photoId")
+    public Photo getPhotoByPhotoId (@RequestBody Long photoId) {
+        return photoService.findByPhotoId(photoId);
+    }
+
     @PostMapping("/photo/update")
     public void updatePhoto(@RequestBody Photo photo){
         Photo currentPhoto = photoService.findByPhotoId(photo.getPhotoId());
