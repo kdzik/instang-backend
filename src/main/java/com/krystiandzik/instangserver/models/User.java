@@ -27,6 +27,28 @@ public class User {
     @ManyToMany
     private List<Photo> likedPhotoList;
 
+    @OneToMany(cascade = CascadeType.ALL)
+    private List<Follow> followers;
+
+    @OneToMany(cascade = CascadeType.ALL)
+    private List<Follow> followed;
+
+    public List<Follow> getFollowers() {
+        return followers;
+    }
+
+    public void setFollowers(List<Follow> followers) {
+        this.followers = followers;
+    }
+
+    public List<Follow> getFollowed() {
+        return followed;
+    }
+
+    public void setFollowed(List<Follow> followed) {
+        this.followed = followed;
+    }
+
     public Long getUserId() {
         return userId;
     }
@@ -89,5 +111,21 @@ public class User {
 
     public void setLikedPhotoList(List<Photo> likedPhotoList) {
         this.likedPhotoList = likedPhotoList;
+    }
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "userId=" + userId +
+                ", firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", userName='" + userName + '\'' +
+                ", password='" + password + '\'' +
+                ", created=" + created +
+                ", photoList=" + photoList +
+                ", likedPhotoList=" + likedPhotoList +
+                ", followers=" + followers +
+                ", followed=" + followed +
+                '}';
     }
 }

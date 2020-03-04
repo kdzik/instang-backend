@@ -34,4 +34,15 @@ public class UserResources {
     public User updateUser(@RequestBody User user){
         return userService.save(user);
     }
+
+   /* @PutMapping("/user/update/followers")
+    public User updateFollow(@RequestBody User user){
+     //   User user2 = findByUserId(user.getUserId());
+     //   System.out.println("Przekazany: " + user.toString());
+     //   System.out.println("Z bazy: " + user2.toString());
+     //   user2.setFollowed(user.getFollowed());
+      //  user2.setFollowers((user.getFollowers()));
+       // System.out.println(user2.toString());
+     //   return userService.save(user2);
+    }*/
 }
