@@ -34,9 +34,9 @@ public class LikeResources {
 
     @PostMapping("/like/remove")
     @Transactional
-    public void removeLike(@RequestBody Long userId){
-        Likes like = likeService.findByUserId(userId);
-        System.out.println(like.toString());
-        likeService.deleteByLikeId(like.getLikeId());
+    public void removeLike(@RequestBody Long likeId){
+   //     Likes like = likeService.findByLikeId(userId);
+     //   System.out.println(like.toString());
+        likeService.deleteByLikeId(likeId);
     }
 }
