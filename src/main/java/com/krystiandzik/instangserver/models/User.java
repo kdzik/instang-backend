@@ -17,6 +17,8 @@ public class User {
     private String userName;
     private String password;
 
+    private Long avatarId;
+
     @CreationTimestamp
     private Date created;
 
@@ -32,6 +34,14 @@ public class User {
 
     @OneToMany(cascade = CascadeType.ALL)
     private List<Follow> followed;
+
+    public Long getAvatarId() {
+        return avatarId;
+    }
+
+    public void setAvatarId(Long avatarId) {
+        this.avatarId = avatarId;
+    }
 
     public List<Follow> getFollowers() {
         return followers;
