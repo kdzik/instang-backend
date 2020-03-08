@@ -15,6 +15,7 @@ public class Photo {
     private String photoName;
     private String title;
     private String description;
+    private String userName;
     private String imageName;
 
     @CreationTimestamp
@@ -24,10 +25,30 @@ public class Photo {
     @JsonBackReference
     private User user;
 
-    private int likes;
+    @OneToMany(mappedBy = "photo")
+    private List<Likes> likes;
 
     @OneToMany(mappedBy = "photo", fetch=FetchType.EAGER)
     private List<Comment> commentList;
+
+    //private int likes;
+
+
+    public List<Likes> getLikes() {
+        return likes;
+    }
+
+    public void setLikes(List<Likes> likes) {
+        this.likes = likes;
+    }
+
+    public String getUserName() {
+        return userName;
+    }
+
+    public void setUserName(String userName) {
+        this.userName = userName;
+    }
 
     public Long getPhotoId() {
         return photoId;
@@ -83,14 +104,6 @@ public class Photo {
 
     public void setUser(User user) {
         this.user = user;
-    }
-
-    public int getLikes() {
-        return likes;
-    }
-
-    public void setLikes(int likes) {
-        this.likes = likes;
     }
 
     public List<Comment> getCommentList() {

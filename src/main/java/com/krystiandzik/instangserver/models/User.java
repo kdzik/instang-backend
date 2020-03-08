@@ -24,8 +24,8 @@ public class User {
     @JsonManagedReference
     private List<Photo> photoList;
 
-    @ManyToMany
-    private List<Photo> likedPhotoList;
+   // @OneToMany(cascade = {CascadeType.PERSIST, CascadeType.REFRESH})
+  //  private List<Photo> likedPhotoList;
 
     @OneToMany(cascade = CascadeType.ALL)
     private List<Follow> followers;
@@ -105,13 +105,14 @@ public class User {
         this.photoList = photoList;
     }
 
-    public List<Photo> getLikedPhotoList() {
+ /*   public List<Photo> getLikedPhotoList() {
         return likedPhotoList;
     }
 
     public void setLikedPhotoList(List<Photo> likedPhotoList) {
         this.likedPhotoList = likedPhotoList;
     }
+*/
 
     @Override
     public String toString() {
@@ -123,7 +124,7 @@ public class User {
                 ", password='" + password + '\'' +
                 ", created=" + created +
                 ", photoList=" + photoList +
-                ", likedPhotoList=" + likedPhotoList +
+    //            ", likedPhotoList=" + likedPhotoList +
                 ", followers=" + followers +
                 ", followed=" + followed +
                 '}';
